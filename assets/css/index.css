@@ -384,7 +384,7 @@
 
 #list_sec .list_wrap .list .inner .con .text{
   font-size: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   letter-spacing: -0.1rem;
 }
 
@@ -392,6 +392,7 @@
   display: flex;
   gap: 1rem;
   color: #666;
+  text-transform: uppercase;
 }
 
 #list_sec .list_wrap .list:hover{
@@ -416,7 +417,7 @@
 }
 
 #list_sec .list_wrap .list .tag{
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: left;
 }
 
@@ -531,6 +532,7 @@
 }
 
 #contact_sec .contact_title h2{
+  width: 100%;
   font-size: 16rem;
   color: #fff;
   font-weight: 600;
@@ -770,6 +772,12 @@
     font-size: 1.4rem;
   }
 
+  #project_sec .project_box .project_title .project_link a{
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+  }
+
   
   /* list_sec */
   #list_sec .list_wrap .list{
@@ -816,22 +824,23 @@
     font-size: 1.4rem;
   }
 
+  /* contact_sec */
   #contact_sec .contact_title{
     text-align: center;
   }
 
+  #contact_sec .contact_title h2{
+    font-size: 4rem;
+  }
+
   #contact_sec .contact_title p.email{
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: -0.4rem;
   }
   
   #contact_sec .contact_title .contact_link{
-    justify-content: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
-  #contact_sec .contact_title .contact_link img{
-    width: 2.6rem;
-    height: 2.6rem;
-  }
+  
 }
