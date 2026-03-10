@@ -570,12 +570,10 @@ body.modal-open{overflow:hidden;}
 }
 
 .lr-btn .close:hover{
-  background: #fff;
+  background: #e76c2a;
 }
 
-.lr-btn .close:hover i{
-  color: #333;
-}
+
 
 .lr-btn .mod-btn .pre:hover, 
 .lr-btn .mod-btn .next:hover{
