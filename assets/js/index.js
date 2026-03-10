@@ -49,6 +49,7 @@ sections.forEach((el, i) => {
 
   // 진입: 아래에서 슬라이드업
   gsap.from(el, {
+    scale: 0.7,
     yPercent: 6,
     ease: 'none',
     scrollTrigger: {
@@ -62,7 +63,7 @@ sections.forEach((el, i) => {
   // 이탈: 뒤로 물러나며 축소 (마지막 패널 제외)
   if (i < sections.length - 1) {
     gsap.to(el, {
-      scale: 0.88,
+      scale: 1,
       ease: 'none',
       scrollTrigger: {
         trigger: el,
@@ -99,7 +100,7 @@ gsap.utils.toArray('#list_sec .list_wrap a.list').forEach((elem) => {
   // quickTo로 생성한 헬퍼 함수를 저장해 mousemove 시 재사용
   const xTo = gsap.quickTo(image, "x", { duration: 0.5, ease: "power3" });
   const yTo = gsap.quickTo(image, "y", { duration: 0.5, ease: "power3" });
-  const fade = gsap.to(image, { autoAlpha: 0.8, ease: 'none', paused: true });
+  const fade = gsap.to(image, { autoAlpha: 1, ease: 'none', paused: true });
 
   const onMove = (e) => { xTo(e.clientX); yTo(e.clientY); };
 
@@ -119,3 +120,4 @@ gsap.utils.toArray('#list_sec .list_wrap a.list').forEach((elem) => {
     document.removeEventListener('mousemove', onMove);
   });
 });
+
