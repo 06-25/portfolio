@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  let ani = $(".ani");
+  let ani = $(".fade");
 
   //Scroll
   $.fn.scrollMoving = function(){
@@ -25,6 +25,8 @@ $(document).ready(function(){
       ani.each(function(){
         if($(this).scrollMoving()){
           $(this).addClass("moving");
+        } else {
+          $(this).removeClass("moving"); // 뷰포트 밖으로 나가면 클래스 제거
         }
       });
       ticking = false;

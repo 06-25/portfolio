@@ -1,68 +1,23 @@
-/* brandAnimation */
-
-/* x축 이동 */
-/* left */
-.ani.x_Left {
-	opacity: 0;
-	transform: translateX(-80px);
-}
-.ani.x_Left.moving {
-	opacity: 1;
-	transform: translateX(0);
-  transition: 1s;
-}
-/* right */
-.ani.x_Right {
-	opacity: 0;
-	transform: translateX(80px);
-}
-.ani.x_Right.moving {
-	opacity: 1;
-	transform: translateX(0);
-  transition: 1s;
-}
-
 /* y축 이동 */
-.ani.y_Bottom{
+.fade{
   opacity: 0;
   transform:translateY(40px);
 }
-.ani.y_Bottom.moving{
+.fade.moving{
   opacity: 1;
   transform:translateY(0px);
   transition: 1s;
 }
 
 /* delay */
-
-.ani.delay02.x_Left.moving{transition-delay: 0.2s;}
-.ani.delay03.x_Left.moving{transition-delay: 0.3s;}
-.ani.delay04.x_Left.moving{transition-delay: 0.4s;}
-.ani.delay05.x_Left.moving{transition-delay: 0.5s;}
-.ani.delay06.x_Left.moving{transition-delay: 0.6s;}
-.ani.delay07.x_Left.moving{transition-delay: 0.7s;}
-.ani.delay08.x_Left.moving{transition-delay: 0.8s;}
-.ani.delay10.x_Left.moving{transition-delay: 1s;}
-
-.ani.delay02.y_Bottom.moving{transition-delay: 0.2s;}
-.ani.delay03.y_Bottom.moving{transition-delay: 0.3s;}
-.ani.delay04.y_Bottom.moving{transition-delay: 0.4s;}
-.ani.delay05.y_Bottom.moving{transition-delay: 0.5s;}
-.ani.delay06.y_Bottom.moving{transition-delay: 0.6s;}
-.ani.delay07.y_Bottom.moving{transition-delay: 0.7s;}
-.ani.delay08.y_Bottom.moving{transition-delay: 0.8s;}
-.ani.delay10.y_Bottom.moving{transition-delay: 1s;}
-
-/* img scale */
-.ani.scaleImg img {
-  opacity: 0;
-  transform: scale(1.2);
-}
-.ani.scaleImg.moving img {
-  opacity: 1;
-  transform: scale(1);
-  transition: 1s ease-in-out;
-}
+.fade.delay02.moving{transition-delay: 0.2s;}
+.fade.delay03.moving{transition-delay: 0.3s;}
+.fade.delay04.moving{transition-delay: 0.4s;}
+.fade.delay05.moving{transition-delay: 0.5s;}
+.fade.delay06.moving{transition-delay: 0.6s;}
+.fade.delay07.moving{transition-delay: 0.7s;}
+.fade.delay08.moving{transition-delay: 0.8s;}
+.fade.delay10.moving{transition-delay: 1s;}
 
 /* cover */
 .ani.cover:after {
