@@ -93,13 +93,13 @@
   width: 100%;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .skills-wrap{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
-  top: 50%;
   left: 25%;
   transform: translateY(-50%, -50%);
 }
@@ -112,6 +112,13 @@
   font-weight: 100;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+@media (max-width: 540px){
+  .skills-wrap .skills{
+    font-size: 6rem;
+    font-weight: 100;
+  }
 }
 
 .skill-wrap .skills .skill:nth-child(1){
