@@ -291,9 +291,8 @@
 }
 
 @media (max-width: 540px){
-  #img-sec .img-image img{
-    width: 100%;
-    height: 50vh;
+  #about-sec .about-wrap .text-wrap p.en{
+    font-size: 2rem;
   }
 
   #img-sec .img-text ul li .img-box .img-tit{
