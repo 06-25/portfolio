@@ -1,12 +1,3 @@
-.text-wrap{
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  gap: 3rem;
-  padding-left: 15%;
-}
-
 .en{
   font-weight: 400;
   font-family: 'Selecta';
@@ -120,6 +111,7 @@
 
 .skills-wrap{
   width: 100%;
+  height: 100%;
   position: absolute;
 }
 
@@ -411,6 +403,7 @@
 
 #work-sec .work-wrap .text-wrap{
   width: 100%;
+  height: 100%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
