@@ -6,17 +6,23 @@
   <title>Jeongwoo's Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/ui/port_logo.svg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/splitting.min.js" defer></script>
+  <script src="assets/js/splittype.js" defer></script>
+  <script src="assets/js/renis.js" defer></script>
+  <script src="assets/js/scroll.js" defer></script>
+  <script src="assets/js/index.js" defer></script>
+  
 </head>
 <body>
   <header>
-    <div class="header_sec">
+    <div class="header-sec">
       <div class="nav">
-        <ul class="util_menu">
-          <li><a href="#about_sec">about</a></li>
-          <li><a href="#project_sec">project</a></li>
-          <li><a href="#contact_sec">contact</a></li>
+        <ul class="util-menu">
+          <li><a href="#about-sec">about</a></li>
+          <li><a href="#work-sec">project</a></li>
+          <li><a href="#contact-sec">contact</a></li>
         </ul>
       </div>
     </div>
@@ -24,86 +30,228 @@
   <main>
     <section id="main-sec">
       <div class="intro">
+        <h1 class="sr-only">박정우 포트폴리오</h1>
         <h2>&copy;2026</h2>
       </div>
-    </section>
     </section>
     <section id="about-sec">
       <div class="about-wrap">
         <div class="text-wrap">
-          <p class="en fade delay02">
+          <p class="en">
             I am a UI/UX designer who creates intuitive and 
             <strong class="point">meaningful<br> digital experiences.</strong>
             With a <strong class="point">flexible mindset</strong> and user-centered thinking,
             I design interfaces that connect brand identity with clear, engaging, and functional user experiences.
           </p>
-          <p class="kr fade delay03">
+          <p class="kr">
             저는 직관적이고 의미 있는 디지털 경험을 만드는 UI/UX 디자이너 박정우입니다.
             유연한 사고와<br> 사용자 중심의 디자인을 통해 브랜드 아이덴티티와 사용자를 연결하는 명확하고 효과적인 인터페이스를<br> 설계합니다.
           </p>
         </div>
       </div>
     </section>
-    <section id="strength-sec">
-    <div class="strength-wrap">
-      <div class="strength">
-        <div class="strength-inner circle">
-          <div class="strength-title">
-            <h3>strength</h3>
-          </div>
-          <video class="strength-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay>
-            <source src="assets/video/method-1.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="strength-inner">
-          <div class="strength-title">
-            <h3>Flexible</h3>
-            <p>다양한 의견과 피드백을 열린 마음으로 받아들이며, 상황과 프로젝트의 목적에 맞게 디자인 방향을 조정합니다.</p>
-          </div>
-          <video class="strength-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay>
-            <source src="assets/video/method-2.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="strength-inner">
-          <div class="strength-title">
-            <h3>Refined</h3>
-            <p>시각적 균형과 디테일을 고려하여 브랜드의 분위기와 사용성을 동시에 만족시키는 디자인을 지향합니다.</p>
-          </div>
-          <video class="strength-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay>
-            <source src="assets/video/method-3.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="strength-inner">
-          <div class="strength-title">
-            <h3>Balanced</h3>
-            <p>시각적인 완성도뿐만 아니라 사용성과 접근성을 함께 고려하여 조화로운 사용자 경험을 설계합니다.</p>
-          </div>
-          <video class="strength-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay>
-            <source src="assets/video/method-4.mp4" type="video/mp4" />
-          </video>
+    <section id="skills-sec">
+      <div class="skills-wrap">
+        <div class="skills">
+          <p class="skill">Analytical</p>
+          <p class="skill">Adaptive</p>
+          <p class="skill">flexible</p>
+          <p class="skill">Refined</p>
+          <p class="skill">Balanced</p>
         </div>
       </div>
-    </div>
     </section>
-    
+    <section id="img-sec">
+      <div class="img-image">
+        <img src="assets/images/index/cocomockup.png" alt="작업 화면">
+        <img src="assets/images/index/design3.jpg" alt="작업 화면">
+        <img src="assets/images/index/design1.jpg" alt="작업 화면">
+        <img src="assets/images/index/design2.jpg" alt="작업 화면">
+        <img src="assets/images/index/design4.jpg" alt="작업 화면">
+      </div>
+      <div class="img-text">
+        <ul>
+          <li>
+            <h2>I am..</h2>
+          </li>
+          <li>
+            <div class="img-box">
+              <p class="img-num">1</p>
+              <p class="img-tit">Analytical</p>
+              <p class="img-txt en">
+                <span>I translate user behavior data and</span>
+                <span>qualitative feedback into logical, evidence-based</span> <span>UI/UX solutions rather than relying on intuition</span>
+              </p>
+              <p class="img-txt kr">
+                <span>사용자의 행동 데이터와 정성적 피드백을 면밀히 분석하여,</span>
+                <span>직관이 아닌 논리적 근거를 바탕으로 UI/UX 솔루션을 도출합니다</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="img-box">
+              <p class="img-num">2</p>
+              <p class="img-tit">Adaptive</p>
+              <p class="img-txt en">
+                <span>I quickly absorb new domains and trends,</span>
+                <span>proactively adapting to fast-changing business</span> <span>requirements and product environments.</span>
+              </p>
+              <p class="img-txt kr">
+                <span>새로운 도메인과 트렌드를 빠르게 습득하며,</span>
+                <span>급변하는 비즈니스 요구사항과 프로덕트 환경에 능동적으로 적응합니다</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="img-box">
+              <p class="img-num">3</p>
+              <p class="img-tit">Flexible</p>
+              <p class="img-txt en">
+                <span>I communicate openly with cross-functional teams,</span>
+                <span>offering flexible design alternatives that balance user needs</span>
+                <span>with technical and business constraints</span>
+              </p>
+              <p class="img-txt kr">
+                <span>개발 및 비즈니스 제약 조건을 이해하고 동료들과 열린 마음으로 소통하며,</span>
+                <span>최적의 프로덕트 구현을 위한 유연한 대안을 제시합니다</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="img-box">
+              <p class="img-num">4</p>
+              <p class="img-tit">Refined</p>
+              <p class="img-txt en">
+                <span>I simplify complex information architectures</span>
+                <span>and deliver high usability through meticulous,</span> <span>pixel-perfect visual craftsmanship.</span>
+              </p>
+              <p class="img-txt kr">
+                <span>복잡한 정보 구조를 직관적으로 정돈하고,</span>
+                <span>픽셀 단위의 디테일을 놓치지 않는 시각적 완성도로 높은 사용성을 구현합니다</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="img-box">
+              <p class="img-num">5</p>
+              <p class="img-tit">Balanced</p>
+              <p class="img-txt en">
+                <span>I maintain a balanced perspective that</span>
+                <span>prioritizes seamless user experiences while</span> <span>driving measurable business goals and impact</span>
+              </p>
+              <p class="img-txt kr">
+                <span>사용자의 편의성을 최우선으로 고려하면서도,</span>
+                <span>비즈니스의 목표와 임팩트를 동시에 달성할 수 있는 균형 잡힌 시각을 가집니다</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="img-box">
+              <p class="img-num">6</p>
+              <p class="img-tit">AI</p>
+              <p class="img-txt en">
+                <span>I integrate generative AI tools into my design</span>
+                <span>workflow to maximize efficiency in research</span> <span>and visualization, crafting future-ready products</span>
+              </p>
+              <p class="img-txt kr">
+                <span>또한 생성형 AI 툴을 디자인 워크플로우에 적극적으로 도입하여</span>
+                <span>리서치 및 시각화의 효율을 극대화하고, 미래지향적인 프로덕트를 설계합니다</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="work-sec">
+      <div class="work-wrap">
+        <div class="text-wrap">
+          <p class="en">
+            I constantly strive to find the <strong class="point">ideal equilibrium</strong> between the user’s <strong class="point">aesthetic experience</strong> and the business’s need for efficiency, ensuring neither is compromised.
+          </p>
+          <p class="kr">
+            사용자가 느끼는 최상의 심미성과 비즈니스가 요구하는 효율성 사이에서,<br /> 어느 쪽으로도 치우치지 않는 최적의 접점을 찾는 일을 매일 고민합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="project-sec">
+      <div class="project section-1">
+        <div class="project-content">
+          <div class="project-inner">
+            <video src="assets/video/laundrygo.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <div class="project-text">
+              <h2>LAUNDRYGO</h2>
+              <p>기여도 100% #적응형 #HTML #CSS #javascript #jQuery</p>
+              <p>피그마와 AI를 활용해 리뉴얼한 런드리고 모바일 앱 입니다.</p>
+              <div class="project-btn">
+                <a href="#none">figma</a>
+                <a href="#none">viewpage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project project-2">
+        <div class="project-content">
+          <div class="project-inner">
+            <video src="assets/video/havehad_media.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <div class="project-text">
+              <h2>HAVEHAD</h2>
+              <p>기여도 100% #적응형 #HTML #CSS #javascript #jQuery</p>
+              <p>피그마와 AI를 활용해 리뉴얼한 런드리고 모바일 앱 입니다.</p>
+              <div class="project-btn">
+                <a href="#none">figma</a>
+                <a href="#none">viewpage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project project-3">
+        <div class="project-content">
+          <div class="project-inner">
+            <video src="assets/video/mmca_media.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <div class="project-text">
+              <h2>MMCA</h2>
+              <p>기여도 100% #적응형 #HTML #CSS #javascript #jQuery</p>
+              <p>피그마와 AI를 활용해 리뉴얼한 런드리고 모바일 앱 입니다.</p>
+              <div class="project-btn">
+                <a href="#none">figma</a>
+                <a href="#none">viewpage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project project-4">
+        <div class="project-content">
+          <div class="project-inner">
+            <video src="assets/video/kakao_media.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <div class="project-text">
+              <h2>KAKAOPAY</h2>
+              <p>기여도 100% #적응형 #HTML #CSS #javascript #jQuery</p>
+              <p>피그마와 AI를 활용해 리뉴얼한 런드리고 모바일 앱 입니다.</p>
+              <div class="project-btn">
+                <a href="#none">figma</a>
+                <a href="#none">viewpage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="hobs-sec">
+      <div class="hobs-wrap">
+        <div class="hobs">
+          <p class="hob">Analytical</p>
+          <p class="hob">Adaptive</p>
+          <p class="hob">flexible</p>
+          <p class="hob">Refined</p>
+          <p class="hob">Balanced</p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    <div class="footer_sec">
-      <p>© All rights reserved Park Jeongwoo 2026</p>
-    </div>
-  </footer>
-  <script src="assets/js/jquery-3.7.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="assets/js/scrolla.jquery.min.js"></script>
-  <script src="assets/js/splitting.min.js"></script>
-  <script src="assets/js/gsap.min.js"></script>
-  <script src="assets/js/scrolltrigger.min.js"></script>
-  <script src="assets/js/splittype.js"></script>
-  <script src="assets/js/renis.min.js"></script>
-  <script src="assets/js/debounce.min.js"></script>
-  <script src="assets/js/lodash-throttle.js"></script>
-  <script src="assets/js/scroll.js"></script>
-  <script src="assets/js/index.js"></script>
+  
 </body>
 </html>

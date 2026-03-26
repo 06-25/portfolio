@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:thomasthorstensson.com)"
+      "WebFetch(domain:thomasthorstensson.com)",
+      "WebFetch(domain:www.dfy.co.kr)"
     ]
   }
 }
