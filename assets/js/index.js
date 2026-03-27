@@ -85,12 +85,11 @@ const initImgSection = () => {
 
   ScrollTrigger.create({
     trigger: '.img-image',
-    start: '#img-sec',
+    start: 'top top',
     endTrigger: '.img-text',
     end: 'bottom bottom',
     pin: true,
     pinSpacing: false,
-    invalidateOnRefresh: true,
   });
 
   listItems.forEach((li, index) => {
