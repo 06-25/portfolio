@@ -123,12 +123,15 @@
 
 /* img-sec */
 #img-sec{
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
 }
 
 #img-sec .img-image{
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 100vh;
   overflow: hidden;

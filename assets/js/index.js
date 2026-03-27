@@ -83,20 +83,10 @@ const initImgSection = () => {
   gsap.set(images, { zIndex: 0, opacity: 0 });
   gsap.set(images[0], { opacity: 1, zIndex: 1 });
 
-  ScrollTrigger.create({
-    trigger: '.img-image',
-    start: 'top top',
-    endTrigger: '.img-text',
-    end: 'bottom bottom',
-    pin: true,
-    pinSpacing: false,
-    invalidateOnRefresh: true,
-  });
-
   listItems.forEach((li, index) => {
     ScrollTrigger.create({
       trigger: li,
-      start: 'top bottom',
+      start: 'top center',
       end: 'bottom top',
       onEnter: () => gsap.set(images[index], { opacity: 1, zIndex: 1 }),
       // ✅ 첫 번째 이미지는 LeaveBack 시에도 opacity 유지
