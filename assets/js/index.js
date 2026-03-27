@@ -99,7 +99,11 @@ const initImgSection = () => {
       start: 'top 60%',
       end: 'bottom top',
       onEnter: () => gsap.set(images[index], { opacity: 1, zIndex: 1 }),
-      onLeaveBack: () => gsap.set(images[index], { opacity: 0, zIndex: 0 }),
+      // ✅ 첫 번째 이미지는 LeaveBack 시에도 opacity 유지
+      onLeaveBack: () => {
+        if (index === 0) return;
+        gsap.set(images[index], { opacity: 0, zIndex: 0 });
+      },
       invalidateOnRefresh: true,
     });
   });
