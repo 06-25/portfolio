@@ -85,7 +85,7 @@ const initImgSection = () => {
 
   ScrollTrigger.create({
     trigger: '.img-image',
-    start: 'top top',
+    start: '#img-sec',
     endTrigger: '.img-text',
     end: 'bottom bottom',
     pin: true,
