@@ -98,8 +98,8 @@ const initImgSection = () => {
       trigger: li,
       start: 'top 60%',
       end: 'bottom top',
-      onEnter: () => gsap.to(images[index], { opacity: 1, zIndex: 1, duration: 0.7 }),
-      onLeaveBack: () => gsap.to(images[index], { opacity: 0, zIndex: 0, duration: 0.7 }),
+      onEnter: () => gsap.set(images[index], { opacity: 1, zIndex: 1 }),
+      onLeaveBack: () => gsap.set(images[index], { opacity: 0, zIndex: 0 }),
       invalidateOnRefresh: true,
     });
   });
