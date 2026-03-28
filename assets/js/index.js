@@ -110,8 +110,8 @@ const initImgSection = () => {
       scrollTrigger: {
         trigger: listItems[listItems.length - 1],
         start: 'top 60%',
-        end: 'bottom top',
-        scrub: true,
+        end: 'bottom 80%',
+        scrub: 1.5,
       },
     }
   );
