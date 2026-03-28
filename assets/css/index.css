@@ -252,6 +252,19 @@
   position: relative;
 }
 
+#project-sec .project-title h2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20rem;
+  font-weight: 600;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
 .project-video {
   position: absolute;
   top: 0;
@@ -299,7 +312,7 @@
   transform: translate(-50%, -50%);
 }
 
-.project-text h2 {
+.project-text h3 {
   font-size: 12rem;
   color: #fff;
   font-weight: 400;
@@ -369,6 +382,10 @@
   .skills-wrap .skills{
     font-size: 16rem;
   }
+
+  #project-sec .project-title h2{
+    font-size: 12rem;
+  }
 }
 
 @media (max-width: 768px){
@@ -427,9 +444,15 @@
     font-size: 3rem;
   }
 
-  .project-text h2{
+  #project-sec .project-title h2{
     font-size: 8rem;
   }
+
+  .project-text h3{
+    font-size: 8rem;
+  }
+
+  
 }
 
 @media (max-width: 540px){
@@ -462,7 +485,11 @@
     font-size: 2rem;
   }
 
-  .project-text h2{
+  #project-sec .project-title h2{
+    font-size: 6rem;
+  }
+
+  .project-text h3{
     font-size: 4rem;
   }
 

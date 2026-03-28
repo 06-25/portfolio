@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 //header-sec
-const showAnim = gsap.from('.header-sec', { 
+const showAnim = gsap.from('.header-sec', {
   yPercent: -200,
   paused: true,
   duration: 0.2
@@ -10,7 +10,6 @@ const showAnim = gsap.from('.header-sec', {
 ScrollTrigger.create({
   start: "top top",
   end: "max",
-  // markers: true,
   onUpdate: (self) => {
     self.direction === -1 ? showAnim.play() : showAnim.reverse()
   }
@@ -39,9 +38,7 @@ document.querySelectorAll('.text-wrap').forEach((wrap) => {
 //strength-sec
 const setMoveHorizontalText = (array) => {
   const tl = gsap.timeline();
-
   tl.addLabel('text', 0);
-
   array.forEach((el, idx) => {
     tl.to(
       el,
@@ -52,11 +49,10 @@ const setMoveHorizontalText = (array) => {
       `text+=${idx * 0.05}`
     );
   });
-
   return tl;
 };
 
-//skills-wrap 공통 애니메이션 — skills-wrap이 추가되면 자동 적용
+//skills-wrap
 document.querySelectorAll('.skills-wrap').forEach((wrap) => {
   const items = [...wrap.querySelectorAll('p')];
   if (!items.length) return;
@@ -92,10 +88,14 @@ const initImgSection = () => {
         gsap.set(images[index], { zIndex: 1 });
         gsap.to(images[index], { opacity: 1, duration: 0.6, ease: 'power2.inOut' });
       },
-      // ✅ 첫 번째 이미지는 LeaveBack 시에도 opacity 유지
       onLeaveBack: () => {
         if (index === 0) return;
-        gsap.to(images[index], { opacity: 0, duration: 0.6, ease: 'power2.inOut', onComplete: () => gsap.set(images[index], { zIndex: 0 }) });
+        gsap.to(images[index], {
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.inOut',
+          onComplete: () => gsap.set(images[index], { zIndex: 0 }),
+        });
       },
       invalidateOnRefresh: true,
     });
@@ -118,43 +118,42 @@ const initImgSection = () => {
 };
 
 //project-sec
-var panels = gsap.utils.toArray(".project");
+const panels = gsap.utils.toArray('.project');
 panels.pop();
 
-panels.forEach((panel, i) => {
-  
-  let innerpanel = panel.querySelector(".project-inner");
-  
-  let panelHeight = innerpanel.offsetHeight;
-  console.log(panelHeight)
-  
-  let windowHeight = window.innerHeight;
-  
-  let difference = panelHeight - windowHeight;
-  
-  let fakeScrollRatio = difference > 0 ? (difference / (difference + windowHeight)) : 0;
-  
+panels.forEach((panel) => {
+  const innerpanel = panel.querySelector('.project-inner');
+  const panelHeight = innerpanel.offsetHeight;
+  const windowHeight = window.innerHeight;
+  const difference = panelHeight - windowHeight;
+  const fakeScrollRatio = difference > 0 ? (difference / (difference + windowHeight)) : 0;
+
   if (fakeScrollRatio) {
-    panel.style.marginBottom = panelHeight * fakeScrollRatio + "px";
+    panel.style.marginBottom = panelHeight * fakeScrollRatio + 'px';
   }
-  
-  let tl = gsap.timeline({
-    scrollTrigger:{
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
       trigger: panel,
-      start: "bottom bottom",
-      end: () => fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : "bottom top",
+      start: 'bottom bottom',
+      end: () => fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : 'bottom top',
       pinSpacing: false,
       pin: true,
-      scrub: true
-    }
+      scrub: true,
+    },
   });
-  
+
   if (fakeScrollRatio) {
-    tl.to(innerpanel, {yPercent:-100, y: window.innerHeight, duration: 1 / (1 - fakeScrollRatio) - 1, ease: "none"});
+    tl.to(innerpanel, {
+      yPercent: -100,
+      y: window.innerHeight,
+      duration: 1 / (1 - fakeScrollRatio) - 1,
+      ease: 'none',
+    });
   }
-  tl.fromTo(panel, {scale:1, opacity:1}, {scale: 0.7, opacity: 0.5, duration: 0.9})
-    .to(panel, {opacity:0, duration: 0.1});
+
+  tl.fromTo(panel, { scale: 1, opacity: 1 }, { scale: 0.7, opacity: 0.5, duration: 0.9 })
+    .to(panel, { opacity: 0, duration: 0.1 });
 });
 
 initImgSection();
-
