@@ -35,7 +35,7 @@ document.querySelectorAll('.text-wrap').forEach((wrap) => {
   });
 });
 
-//strength-sec
+//skills-sec
 const setMoveHorizontalText = (array) => {
   const tl = gsap.timeline();
   tl.addLabel('text', 0);
@@ -156,4 +156,59 @@ panels.forEach((panel) => {
     .to(panel, { opacity: 0, duration: 0.1 });
 });
 
+const renderCanvas = (selector, image) => {
+  const canvas = document.querySelector(`${selector} canvas`);
+  if (!canvas || !image) return;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+};
+
+const setHobMotion = () => {
+  const bg = document.querySelector("#hob-sec");
+
+  const memberCnt = {
+    frame: 0,
+  };
+
+  const currentFrame = (idx) =>
+    `assets/images/hob/member-${Math.round(idx + 1)}.jpg`;
+
+  const images = [];
+  for (let i = 0; i <= 56; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
+  }
+
+  gsap.to(memberCnt, {
+    frame: 56,
+    snap: 'frame',
+    ease: 'none',
+    repeatRefresh: true,
+    scrollTrigger: {
+      trigger: "#hob-sec",
+      start: () => 'top top',
+      end: () => 'bottom bottom',
+      scrub: 0.5,
+      invalidateOnRefresh: true,
+    },
+    onUpdate: () => {
+      renderCanvas(
+        "#hob-sec .hob-mid",
+        images[memberCnt.frame]
+      );
+    },
+  });
+  const canvas = document.querySelector('#hob-sec .hob-mid canvas');
+  if (canvas) {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  images[0].onload = () => renderCanvas('#hob-sec .hob-mid', images[0]);
+  if (images[0].complete) renderCanvas('#hob-sec .hob-mid', images[0]);
+};
+
 initImgSection();
+setHobMotion();

@@ -52,7 +52,7 @@
 /* about-sec*/
 #about-sec{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   margin: 0 auto;
 }
@@ -226,8 +226,9 @@
 #work-sec{
   padding: 10rem 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
+  box-sizing: border-box;
 }
 
 #work-sec .work-wrap .text-wrap{
@@ -278,7 +279,7 @@
 
 .project {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   font-weight: 600;
@@ -298,7 +299,7 @@
 .project-inner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -362,19 +363,77 @@
 /* hob-sec */
 #hob-sec{
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: relative;
-  border: 1px solid #ff0000;
+  padding-top: 10rem;
 }
 
-#hob-sec .hob-top .hob-title{
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.hob-top {
+  position: relative;
+}
+.hob-title {
   text-align: center;
-  transform: translate(-50%, -50%);
-  font-size: 12rem;
-  color: #fff;
+  text-transform: uppercase;
+  font-family: "Selecta", sans-serif;
+  position: relative;
+  font-size: 13rem;
+  line-height: 11rem;
+  z-index: 3;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.hob-mid{
+  height: 180rem;
+  margin-top: -10rem;
+  margin-bottom: 22rem;
+  position: relative;
+}
+
+.hob-img {
+  z-index: 2;
+  display: block;
+  width: 65rem;
+  height: 65rem;
+  position: sticky;
+  margin: 0 auto;
+  top: calc(50% - 32.5rem);
+  overflow: hidden;
+  border-radius: 100%;
+}
+.hob-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hob-bottom {
+  width: 100%;
+  overflow: hidden;
+}
+.hob-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hob-text p{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  flex-direction: row;
+  font-family: "Rhymes", sans-serif;
+  text-transform: uppercase;
+  font-size: 55rem;
+  font-weight: 200;
+  line-height: 55rem;
+  letter-spacing: -0.03em;
 }
 
 @media (max-width: 1024px){
