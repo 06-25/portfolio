@@ -214,6 +214,3 @@ const setHobMotion = () => {
 initImgSection();
 setHobMotion();
 
-window.addEventListener('load', () => {
-  ScrollTrigger.refresh();
-});
