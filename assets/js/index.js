@@ -22,7 +22,7 @@ document.querySelectorAll('.text-wrap').forEach((wrap) => {
     scrollTrigger: {
       trigger: wrap,
       start: '0% 50%',
-      end: '100% 80%',
+      end: '100% 40%',
       scrub: 1,
     },
   })
@@ -46,7 +46,7 @@ const setMoveHorizontalText = (array) => {
     tl.to(
       el,
       {
-        x: () => (idx % 2 === 0 ? '-20rem' : '20rem'),
+        x: () => (idx % 2 === 0 ? '-50rem' : '50rem'),
         repeatRefresh: true,
       },
       `text+=${idx * 0.05}`
@@ -88,11 +88,14 @@ const initImgSection = () => {
       trigger: li,
       start: 'top center',
       end: 'bottom top',
-      onEnter: () => gsap.set(images[index], { opacity: 1, zIndex: 1 }),
+      onEnter: () => {
+        gsap.set(images[index], { zIndex: 1 });
+        gsap.to(images[index], { opacity: 1, duration: 0.6, ease: 'power2.inOut' });
+      },
       // ✅ 첫 번째 이미지는 LeaveBack 시에도 opacity 유지
       onLeaveBack: () => {
         if (index === 0) return;
-        gsap.set(images[index], { opacity: 0, zIndex: 0 });
+        gsap.to(images[index], { opacity: 0, duration: 0.6, ease: 'power2.inOut', onComplete: () => gsap.set(images[index], { zIndex: 0 }) });
       },
       invalidateOnRefresh: true,
     });
