@@ -140,6 +140,7 @@ panels.forEach((panel) => {
       pinSpacing: false,
       pin: true,
       scrub: true,
+      invalidateOnRefresh: true,
     },
   });
 
@@ -212,3 +213,7 @@ const setHobMotion = () => {
 
 initImgSection();
 setHobMotion();
+
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+});
