@@ -19,13 +19,26 @@
   font-weight: 400;
 }
 
+/* 섹션 공통 */
+section{
+  width: 100%;
+  position: relative;
+}
+
+.font-display{
+  font-family: 'Rhymes', sans-serif;
+}
+
+.sec-title{
+  text-transform: uppercase;
+  color: #fff;
+}
+
 /* main_sec */
 #main-sec{
-  width: 100%;
   height: 100vh;
   min-height: 100%;
   margin: 0 auto;
-  position: relative;
 }
 
 #main-sec .intro{
@@ -45,15 +58,12 @@
 
 #main-sec .intro h2{
   font-size: 12rem;
-  font-family: 'Rhymes';
   font-weight: 600;
 }
 
 /* about-sec*/
 #about-sec{
-  width: 100%;
   min-height: 100vh;
-  position: relative;
   margin: 0 auto;
 }
 
@@ -78,9 +88,7 @@
 
 /* skill-sec */
 #skills-sec{
-  width: 100%;
   height: 105vh;
-  position: relative;
   overflow: hidden;
 }
 
@@ -94,7 +102,6 @@
 
 .skills-wrap .skills{
   z-index: 1;
-  font-family: "Rhymes", sans-serif;
   font-size: 20rem;
   font-weight: 100;
   text-transform: uppercase;
@@ -126,7 +133,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
 }
 
 #img-sec .img-image{
@@ -172,7 +178,6 @@
 
 #img-sec .img-text ul li h2{
   font-weight: 100;
-  font-family: 'Rhymes';
   text-transform: uppercase;
   font-size: 4rem;
 }
@@ -185,7 +190,6 @@
 
 #img-sec .img-text ul li .img-box .img-tit{
   font-weight: 100;
-  font-family: 'Rhymes';
   text-transform: uppercase;
   font-size: 12rem;
   padding-bottom: 5rem;
@@ -225,9 +229,7 @@
 /* work-sec */
 #work-sec{
   padding: 10rem 0;
-  width: 100%;
   min-height: 100vh;
-  position: relative;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -253,9 +255,7 @@
 
 /* project-sec */
 #project-sec {
-  width: 100%;
   height: auto;
-  position: relative;
 }
 
 #project-sec .project-title h2{
@@ -265,8 +265,6 @@
   font-size: 20rem;
   font-weight: 600;
   transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  color: #fff;
   text-align: center;
   padding-bottom: 10rem;
 }
@@ -366,9 +364,7 @@
 
 /* hob-sec */
 #hob-sec{
-  width: 100%;
   height: auto;
-  position: relative;
   padding-top: 10rem;
 }
 
@@ -377,11 +373,9 @@
 }
 .hob-title {
   text-align: center;
-  text-transform: uppercase;
   font-family: "Selecta", sans-serif;
   position: relative;
   font-size: 12rem;
-  line-height: 11rem;
   z-index: 3;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -432,7 +426,6 @@
   align-items: stretch;
   gap: 0;
   flex-direction: row;
-  font-family: "Rhymes", sans-serif;
   text-transform: uppercase;
   font-size: 55rem;
   font-weight: 200;
@@ -602,7 +595,7 @@
   }
 
   .project-text h3{
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   .project-text p{
@@ -618,9 +611,9 @@
     width: 12rem;
   }
 
-
+  /* hob-sec */
   .hob-title{
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   .hob-img {
