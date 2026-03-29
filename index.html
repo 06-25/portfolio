@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeongwoo's Portfolio</title>
+  <title>06-25</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/ui/port_logo.svg">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -17,15 +17,29 @@
 <body>
   <header>
     <div class="header-sec">
-      <div class="nav">
+      <nav class="nav" aria-label="주요 메뉴">
         <ul class="util-menu">
           <li><a href="#about-sec">about</a></li>
           <li><a href="#work-sec">project</a></li>
           <li><a href="#contact-sec">contact</a></li>
         </ul>
-      </div>
+        <button class="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
     </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" aria-hidden="true">
+      <button class="mobile-nav__close" aria-label="메뉴 닫기"></button>
+      <ul class="mobile-nav__list">
+        <li><a href="#about-sec">about</a></li>
+        <li><a href="#work-sec">project</a></li>
+        <li><a href="#contact-sec">contact</a></li>
+      </ul>
+    </nav>
   </header>
+  <div class="mobile-nav__overlay"></div>
   <main>
     <section id="main-sec">
       <div class="intro">

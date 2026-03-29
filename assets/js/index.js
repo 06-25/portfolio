@@ -2,7 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 //header-sec
 const showAnim = gsap.from('.header-sec', {
-  yPercent: -200,
+  top: '-8rem',
   paused: true,
   duration: 0.2
 }).progress(1);
@@ -11,8 +11,47 @@ ScrollTrigger.create({
   start: "top top",
   end: "max",
   onUpdate: (self) => {
-    self.direction === -1 ? showAnim.play() : showAnim.reverse()
+    if (window.innerWidth <= 768) {
+      showAnim.play();
+      return;
+    }
+    self.direction === -1 ? showAnim.play() : showAnim.reverse();
   }
+});
+
+//mobile-nav
+const burger        = document.querySelector('.burger');
+const mobileNav     = document.querySelector('.mobile-nav');
+const mobileOverlay = document.querySelector('.mobile-nav__overlay');
+const mobileClose   = document.querySelector('.mobile-nav__close');
+const mobileLinks   = document.querySelectorAll('.mobile-nav__list a');
+
+const openMobileNav = () => {
+  mobileNav.classList.add('is-open');
+  mobileOverlay.classList.add('is-open');
+  burger.classList.add('is-active');
+  burger.setAttribute('aria-expanded', 'true');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  showAnim.play();
+};
+
+const closeMobileNav = () => {
+  mobileNav.classList.remove('is-open');
+  mobileOverlay.classList.remove('is-open');
+  burger.classList.remove('is-active');
+  burger.setAttribute('aria-expanded', 'false');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+
+burger.addEventListener('click', openMobileNav);
+mobileClose.addEventListener('click', closeMobileNav);
+mobileOverlay.addEventListener('click', closeMobileNav);
+mobileLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileNav();
 });
 
 //text-wrap
