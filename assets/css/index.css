@@ -85,23 +85,34 @@ section{
   z-index: 1;
 }
 
-#about-sec .about-wrap .text-wrap{
+/* text-wrap 공통 */
+.text-wrap{
   text-align: left;
-  margin: 0 auto;
   padding: 0 5rem;
-  position: absolute;
-  top: 30%;
-  left: 10%;
 }
 
-#about-sec .about-wrap .text-wrap p:first-child{
+.text-wrap p.en{
   font-size: 4rem;
   padding-bottom: 3rem;
 }
 
+.text-wrap p.en span{
+  display: block;
+}
 
-#about-sec .about-wrap .text-wrap p:nth-child(2){
+.text-wrap p.en span:nth-child(even){
+  padding-left: 6rem;
+}
+
+.text-wrap p.kr{
   font-size: 1.6rem;
+}
+
+#about-sec .about-wrap .text-wrap{
+  margin: 0 auto;
+  position: absolute;
+  top: 30%;
+  left: 10%;
 }
 
 /* skill-sec */
@@ -283,22 +294,13 @@ section{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 #work-sec .work-wrap .text-wrap{
-  width: 100%;
-  height: 100%;
-  padding: 0 5rem;
-}
-
-#work-sec .work-wrap .text-wrap p.en{
-  font-size: 4rem;
-  padding-bottom: 3rem;
-}
-
-
-#work-sec .work-wrap .text-wrap p.kr{
-  font-size: 1.6rem;
+  position: absolute;
+  top: 20%;
+  left: 40%;
 }
 
 /* project-sec */
@@ -481,6 +483,12 @@ section{
   letter-spacing: -0.03em;
 }
 
+#list-sec{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
 @media (max-width: 1024px){
   #img-sec .img-image img{
     width: 80%;
@@ -494,16 +502,20 @@ section{
     left: 0;
   }
 
-  #about-sec .about-wrap .text-wrap p{
+  .text-wrap p.en{
     font-size: 3rem;
   }
 
-  #about-sec .about-wrap .text-wrap p:nth-child(2){
+  .text-wrap p.kr{
     font-size: 1.6rem;
   }
 
   .skills-wrap .skills{
     font-size: 16rem;
+  }
+
+  #work-sec .work-wrap .text-wrap{
+    left: 30%;
   }
 
   #project-sec .project-title h2{
@@ -540,15 +552,6 @@ section{
     padding-top: 4rem;
   }
 
-  /* about-sec */
-  #about-sec .about-wrap .text-wrap p.en{
-    font-size: 3rem;
-  }
-
-  #about-sec .about-wrap .text-wrap p.kr{
-    font-size: 1.6rem;
-  }
-
   /* skills-sec */
   .skills-wrap .skills{
     font-size: 12rem;
@@ -581,10 +584,6 @@ section{
     margin-right: 0;
   }
 
-  #work-sec .work-wrap .text-wrap p.en{
-    font-size: 3rem;
-  }
-
   #project-sec .project-title h2{
     font-size: 8rem;
   }
@@ -614,7 +613,7 @@ section{
     font-size: 4rem;
   }
 
-  #about-sec .about-wrap .text-wrap p.en{
+  .text-wrap p.en{
     font-size: 2rem;
   }
 
@@ -634,8 +633,8 @@ section{
     font-size: 1.6rem;
   }
 
-  #work-sec .work-wrap .text-wrap p.en{
-    font-size: 2rem;
+  #work-sec .work-wrap .text-wrap{
+    left: 10%;
   }
 
   #project-sec .project-title h2{

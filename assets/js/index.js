@@ -76,7 +76,7 @@ document.querySelectorAll('.text-wrap').forEach((wrap) => {
     y: 100,
     opacity: 0,
     stagger: {
-      each: 0.4,
+      each: 0.2,
       ease: 'power3.inOut',
     },
   });
