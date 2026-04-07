@@ -10,12 +10,13 @@
 }
 
 ::selection{
-  background: #ff9257;
+  background: #00ff55;
   color: #fff;
 }
 
 .point{
-  color: #ff5e00;
+  /* color: #ff5e00; */
+  color: #00ff55;
   font-weight: 400;
 }
 
@@ -67,6 +68,23 @@ section{
   margin: 0 auto;
 }
 
+.img-bg-video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+#img-sec .img-image,
+#img-sec .img-text{
+  position: relative;
+  z-index: 1;
+}
+
 #about-sec .about-wrap .text-wrap{
   text-align: left;
   margin: 0 auto;
@@ -82,13 +100,14 @@ section{
 }
 
 
-#about-sec .about-wrap .text-wrap P:nth-child(2){
+#about-sec .about-wrap .text-wrap p:nth-child(2){
   font-size: 1.6rem;
 }
 
 /* skill-sec */
 #skills-sec{
-  height: 105vh;
+  min-height: 100vh;
+  padding-bottom: 10rem;
   overflow: hidden;
 }
 
@@ -106,6 +125,7 @@ section{
   font-weight: 100;
   text-transform: uppercase;
   white-space: nowrap;
+  font-family: 'Rhymes';
 }
 
 .skill-wrap .skills .skill:nth-child(1){
@@ -128,6 +148,34 @@ section{
   margin-left: 10rem;
 }
 
+.skill-sub {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-family: 'Selecta';
+  line-height: 2;
+  vertical-align: flex-end;
+  margin-left: 2rem;
+  text-transform: none;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.skill-img {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.75em;
+  overflow: hidden;
+  vertical-align: center;
+  margin: 0 1.5rem;
+}
+
+.skill-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* img-sec */
 #img-sec{
   display: flex;
@@ -148,7 +196,7 @@ section{
   height: 60rem;
   object-fit: cover;
   position: absolute;
-  filter: brightness(50%);
+  filter: brightness(80%);
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -161,7 +209,7 @@ section{
 
 #img-sec .img-text ul{
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   font-size: 3rem;
 }
 
@@ -346,12 +394,12 @@ section{
 }
 
 .project-btn a:first-child{
-  border: 1px solid #ff5e00;
+  border: 1px solid #00ff55;
   padding: 0.7rem 2rem;
 }
 
 .project-btn a:first-child:hover{
-  background: #ff5e00;
+  background:#00ff55;
   color: #fff;
   transition: 0.3s;
 }

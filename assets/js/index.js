@@ -19,6 +19,14 @@ ScrollTrigger.create({
   }
 });
 
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 200);
+});
+
 //mobile-nav
 const burger        = document.querySelector('.burger');
 const mobileNav     = document.querySelector('.mobile-nav');
@@ -61,14 +69,14 @@ document.querySelectorAll('.text-wrap').forEach((wrap) => {
       trigger: wrap,
       start: '0% 50%',
       end: '100% 40%',
-      scrub: 1,
+      scrub: 0.2,
     },
   })
   .from(wrap.querySelectorAll('p'), {
     y: 100,
     opacity: 0,
     stagger: {
-      each: 0.2,
+      each: 0.4,
       ease: 'power3.inOut',
     },
   });
@@ -82,7 +90,7 @@ const setMoveHorizontalText = (array) => {
     tl.to(
       el,
       {
-        x: () => (idx % 2 === 0 ? '-50rem' : '50rem'),
+        x: () => (idx % 2 === 0 ? '-10rem' : '10rem'),
         repeatRefresh: true,
       },
       `text+=${idx * 0.05}`
