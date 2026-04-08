@@ -69,14 +69,14 @@ document.querySelectorAll('.text-wrap').forEach((wrap) => {
       trigger: wrap,
       start: '0% 50%',
       end: '100% 40%',
-      scrub: 0.2,
+      scrub: 0.6,
     },
   })
-  .from(wrap.querySelectorAll('p'), {
-    y: 100,
+  .from(wrap.querySelectorAll('span'), {
+    y: 30,
     opacity: 0,
     stagger: {
-      each: 0.2,
+      each: 0.6,
       ease: 'power3.inOut',
     },
   });
