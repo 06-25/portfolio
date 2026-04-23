@@ -62,6 +62,21 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMobileNav();
 });
 
+//strength-sec
+document.querySelectorAll('.strength').forEach((item) => {
+  gsap.from(item, {
+    y: 40,
+    opacity: 0,
+    duration: 0.5,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: item,
+      start: 'top 60%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+});
+
 //text-wrap
 document.querySelectorAll('.text-wrap').forEach((wrap) => {
   gsap.timeline({
