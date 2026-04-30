@@ -10,13 +10,14 @@
 }
 
 ::selection{
-  background: #00ff55;
+  background: #ff8b1e;
   color: #fff;
 }
 
 .point{
   /* color: #ff5e00; */
-  color: #00ff55;
+  /* color: #00ff55; */
+  color: #ff8b1e;
   font-weight: 400;
 }
 
@@ -386,13 +387,7 @@ section{
   position: relative;
   display: flex;
   justify-content: space-between;
-  gap: 10rem;
-}
-
-
-
-.strengths .strength:last-child{
-  border-bottom: 1px solid #333;
+  gap: 5rem;
 }
 
 .strengths .strength h3{
@@ -411,7 +406,7 @@ section{
 }
 
 .strengths .strength p span.en{
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 400;
 }
 
@@ -518,12 +513,12 @@ section{
 }
 
 .project-btn a:first-child{
-  border: 1px solid #00ff55;
+  border: 1px solid #ff8b1e;
   padding: 0.7rem 2rem;
 }
 
 .project-btn a:first-child:hover{
-  background:#00ff55;
+  background:#ff8b1e;
   color: #fff;
   transition: 0.3s;
 }
@@ -822,8 +817,12 @@ section{
     font-size: 4rem;
   }
 
+  .text-wrap{
+    padding: 0 1rem;
+  }
+
   .text-wrap p.en{
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .text-wrap p.en span:nth-child(1){
@@ -852,6 +851,14 @@ section{
 
   #project-sec .project-title h2{
     font-size: 6rem;
+  }
+
+  .strengths .strength h3{
+    font-size: 3rem;
+  }
+
+  .strengths .strength p span.en{
+    font-size: 2rem;
   }
 
   .project-text h3{
