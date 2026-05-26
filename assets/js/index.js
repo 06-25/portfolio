@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 //header-sec
 const showAnim = gsap.from('.header-sec', {
   top: '-8rem',
@@ -39,7 +41,7 @@ const openMobileNav = () => {
   mobileOverlay.classList.add('is-open');
   burger.classList.add('is-active');
   burger.setAttribute('aria-expanded', 'true');
-  mobileNav.setAttribute('aria-hidden', 'false');
+  mobileNav.removeAttribute('aria-hidden');
   document.body.style.overflow = 'hidden';
   showAnim.play();
 };
@@ -79,20 +81,19 @@ document.querySelectorAll('.strength').forEach((item) => {
 
 //text-wrap
 document.querySelectorAll('.text-wrap').forEach((wrap) => {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: wrap,
-      start: '0% 50%',
-      end: '100% 40%',
-      scrub: 0.6,
-    },
-  })
-  .from(wrap.querySelectorAll('span'), {
+  const spans = wrap.querySelectorAll('p > span');
+  if (!spans.length) return;
+
+  gsap.from(spans, {
     y: 30,
     opacity: 0,
-    stagger: {
-      each: 0.6,
-      ease: 'power3.inOut',
+    duration: 0.8,
+    ease: 'power3.out',
+    stagger: 0.12,
+    scrollTrigger: {
+      trigger: wrap,
+      start: 'top 75%',
+      toggleActions: 'play none none none',
     },
   });
 });
@@ -127,97 +128,34 @@ document.querySelectorAll('.skills-wrap').forEach((wrap) => {
     end: 'bottom top',
     animation: tl,
     scrub: 1,
+    invalidateOnRefresh: true,
   });
 });
 
-//img-sec
-const initImgSection = () => {
-  const images = document.querySelectorAll('#img-sec .img-image img');
-  if (!images.length) return;
+//project-sec — 데스크탑 전용 핀 애니메이션
+const mm = gsap.matchMedia();
 
-  const listItems = gsap.utils.toArray('#img-sec .img-text ul li');
-  const lastImage = images[images.length - 1];
+mm.add('(min-width: 769px)', () => {
+  const panels = gsap.utils.toArray('.project');
+  panels.pop();
 
-  gsap.set(images, { zIndex: 0, opacity: 0 });
-  gsap.set(images[0], { opacity: 1, zIndex: 1 });
+  panels.forEach((panel) => {
+    const innerpanel = panel.querySelector('.project-inner');
+    if (!innerpanel) return;
 
-  listItems.forEach((li, index) => {
-    ScrollTrigger.create({
-      trigger: li,
-      start: 'top center',
-      end: 'bottom top',
-      onEnter: () => {
-        gsap.set(images[index], { zIndex: 1 });
-        gsap.to(images[index], { opacity: 1, duration: 0.6, ease: 'power2.inOut' });
-      },
-      onLeaveBack: () => {
-        if (index === 0) return;
-        gsap.to(images[index], {
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power2.inOut',
-          onComplete: () => gsap.set(images[index], { zIndex: 0 }),
-        });
-      },
-      invalidateOnRefresh: true,
-    });
-  });
-
-  gsap.fromTo(
-    lastImage,
-    { scale: 1 },
-    {
-      scale: 3.1,
-      ease: 'none',
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: listItems[listItems.length - 1],
-        start: 'top 60%',
-        end: 'bottom 80%',
-        scrub: 1.5,
+        trigger: panel,
+        start: 'bottom bottom',
+        end: 'bottom top',
+        pinSpacing: false,
+        pin: true,
+        scrub: true,
+        invalidateOnRefresh: true,
       },
-    }
-  );
-};
-
-//project-sec
-const panels = gsap.utils.toArray('.project');
-panels.pop();
-
-panels.forEach((panel) => {
-  const innerpanel = panel.querySelector('.project-inner');
-  if (!innerpanel) return;
-  const panelHeight = innerpanel.offsetHeight;
-  const windowHeight = window.innerHeight;
-  const difference = panelHeight - windowHeight;
-  const fakeScrollRatio = difference > 0 ? (difference / (difference + windowHeight)) : 0;
-
-  if (fakeScrollRatio) {
-    panel.style.marginBottom = panelHeight * fakeScrollRatio + 'px';
-  }
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: panel,
-      start: 'bottom bottom',
-      end: () => fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : 'bottom top',
-      pinSpacing: false,
-      pin: true,
-      scrub: true,
-      invalidateOnRefresh: true,
-    },
-  });
-
-  if (fakeScrollRatio) {
-    tl.to(innerpanel, {
-      yPercent: -100,
-      y: window.innerHeight,
-      duration: 1 / (1 - fakeScrollRatio) - 1,
-      ease: 'none',
     });
-  }
 
-  tl.fromTo(panel, { scale: 1, opacity: 1 }, { scale: 0.7, opacity: 0.5, duration: 0.9 })
-    .to(panel, { opacity: 0, duration: 0.1 });
+    tl.fromTo(panel, { scale: 1, opacity: 1 }, { scale: 0.7, opacity: 0.5, duration: 0.9 })
+      .to(panel, { opacity: 0, duration: 0.1 });
+  });
 });
-
-
