@@ -418,6 +418,7 @@ section{
   width: 100%;
   padding: 15rem 0 10rem;
   overflow: hidden;
+  contain: layout;
 }
 
 .design-wrap{
@@ -452,7 +453,7 @@ section{
   display: flex;
   gap: 2rem;
   width: max-content;
-  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .marquee-track--fwd{
