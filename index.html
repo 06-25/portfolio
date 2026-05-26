@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>&copy;Parkjeongwoo</title>
+  <title>&copy;Parkjeongwoo's portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/ui/port_logo.svg">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="assets/js/splitting.min.js" defer></script>
   <script src="assets/js/splittype.js" defer></script>
   <script src="assets/js/scroll.js" defer></script>
@@ -33,7 +33,7 @@
     <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" aria-hidden="true">
       <button class="mobile-nav__close" aria-label="메뉴 닫기"></button>
       <ul class="mobile-nav__list">
-        <li><a href="#about-sec">about</a></li>
+        <li><a href="#skills-sec">about</a></li>
         <li><a href="#work-sec">project</a></li>
         <li><a href="#contact-sec">contact</a></li>
       </ul>
@@ -44,16 +44,16 @@
     <section id="main-sec">
       <div class="intro">
         <h1 class="sr-only">박정우 포트폴리오</h1>
-        <h2 class="font-display">&copy;2026</h2>
+        <h2 class="font-display">&copy;Designer</h2>
       </div>
     </section>
-    <section id="about-sec">
+    <section id="about-sec" aria-label="소개">
       <div class="about-wrap">
         <div class="text-wrap">
           <p class="en">
-            <span>I am a UI/UX designer who creates intuitive and <strong class="point">meaningful digital</strong></span>
-            <span>experiences. With a <strong class="point">flexible mindset</strong> and user-centered thinking,</span>
-            <span>I design interfaces that connect brand identity with clear,<br /> engaging, and functional user experiences.</span>
+            <span>I am a UI/UX designer who creates intuitive and <span class="point">meaningful digital</span></span>
+            <span>experiences. With a <span class="point">flexible mindset</span> and user-centered thinking,</span>
+            <span>I design interfaces that connect brand identity with clear,<br> engaging, and functional user experiences.</span>
           </p>
           <p class="kr">
             <span>저는 직관적이고 의미 있는 디지털 경험을 만드는 UI/UX 디자이너 박정우입니다. 유연한 사고와 사용자 중심의 디자인을 통해</span>
@@ -62,13 +62,13 @@
         </div>
       </div>
     </section>
-    <section id="skills-sec">
+    <section id="skills-sec" aria-label="기술 스택">
       <div class="skills-wrap">
         <div class="skills font-display">
           <p class="skill">Find Inspiration</p>
           <p class="skill">In A Cup <span class="skill-img"><img src="assets/images/index/coffee.png" alt="커피"></span> Of Coffee</p>
           <p class="skill">A Long Walk<span class="skill-sub">But<br>not too  much..</span></p>
-          <p class="skill">With <span class="skill-img"><img src="assets/images/index/headphone.png" alt=""></span> Good Music</p>
+          <p class="skill">With <span class="skill-img"><img src="assets/images/index/headphone.png" alt="헤드폰"></span> Good Music</p>
           <p class="skill">Playing</p>
           <p class="skill">In My <span class="skill-img"><img src="assets/images/index/idea.png" alt="아이디어"></span> Ears</p>
         </div>
@@ -76,30 +76,32 @@
     </section>
     <section id="intro-sec">
       <div class="intro-wrap">
-        <img src="assets/images/index/city.png" alt="">
+        <img src="assets/images/index/city.png" alt="인트로 배경">
         <div class="intro-tit">
-          <h2>I am</h2>
+          <h2>Intro</h2>
         </div>
         <div class="text-wrap">
           <p class="en">
-            <span>I am a UI/UX designer who creates intuitive and <strong class="point">meaningful digital</strong></span>
-            <span>experiences. With a <strong class="point">flexible mindset</strong> and user-centered thinking,</span>
-            <span>I design interfaces that connect brand identity with clear,<br /> engaging, and functional user experiences.</span>
+            <span>Great design should feel familiar. I build on intuitive interfaces<span class="point">that users can navigate effortlessly,</span></span>
+            <span>adding a touch of brand-led originality to create unforgettable moments.<span class="point">Planting extraordinary</span></span>
+            <span>details within the ordinary that is the value I strive for in my design</span>
           </p>
           <p class="kr">
-            <span>저는 직관적이고 의미 있는 디지털 경험을 만드는 UI/UX 디자이너 박정우입니다. 유연한 사고와 사용자 중심의 디자인을 통해</span>
-            <span>브랜드 아이덴티티와 사용자를 연결하는 명확하고 효과적인 인터페이스를 설계합니다.</span>
+            <span>좋은 디자인은 낯설지 않아야 합니다. 유저가 고민 없이 움직일 수 있는 익숙한 인터페이스를 기본으로 하되</span>
+            <span>그 속에 브랜드만의 독창적인 터치를 한 스푼 더해 잊히지 않는 순간을 만듭니다.</span>
+            <span>당연함 속에 특별함을 심는 디자인, 그것이 제가 지향하는 가치입니다</span>
           </p>
         </div>
       </div>
     </section>
-    <section id="strength-sec">
+    <section id="strength-sec" aria-label="강점">
+      <h2 class="sr-only">강점</h2>
       <ul class="strengths">
         <li class="strength">
           <h3>SKILLS</h3>
           <p>
-            <span class="en">I bridge the gap between aesthetic design<br /> and technical execution by leveraging<br /> expertise in Photoshop, JavaScript, and GSAP.</span>
-            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br />기술적 구현 사이의 가교 역할을 합니다</span>
+            <span class="en">I bridge the gap between aesthetic design<br> and technical execution by leveraging<br> expertise in Photoshop, JavaScript, and GSAP.</span>
+            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br>기술적 구현 사이의 가교 역할을 합니다</span>
             <span class="skill">
               #photoshop #figma #html #css #javascript #gsap
             </span>
@@ -108,55 +110,42 @@
         <li class="strength">
           <h3>AI</h3>
           <p>
-            <span class="en">I leverage AI to automate workflows,<br /> allowing me to immerse myself fully in<br /> crafting intuitive user experiences and<br /> strategic value design</span>
-            <span class="kr">AI로 워크플로우의 한계를 넘고, 디자이너의 통찰이 필요한 직관적 경험과<br /> 전략적 설계에 더 깊이 몰입합니다</span>
+            <span class="en">I leverage AI to automate workflows,<br> allowing me to immerse myself fully in<br> crafting intuitive user experiences and<br> strategic value design</span>
+            <span class="kr">AI로 워크플로우의 한계를 넘고, 디자이너의 통찰이 필요한 직관적 경험과<br> 전략적 설계에 더 깊이 몰입합니다</span>
             <span class="skill">
               #stitch #claude #gemini #midjourney #firefly
             </span>
           </p>
         </li>
         <li class="strength">
-          <h3>Lorem.</h3>
+          <h3>Essential</h3>
           <p>
-            <span class="en">I bridge the gap between aesthetic design<br /> and technical execution by leveraging<br /> expertise in Photoshop, JavaScript, and GSAP.</span>
-            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br />기술적 구현 사이의 가교 역할을 합니다</span>
+            <span class="en">I create refined digital spaces where<br /> purpose and simplicity meet, delivering the<br /> essential core of the service</span>
+            <span class="kr">목적과 단순함이 만나는 정제된 디지털 공간을 창조하며,<br /> 서비스의 본질적인 핵심을 전달합니다.</span>
           </p>
         </li>
         <li class="strength">
-          <h3>Lorem.</h3>
+          <h3>Interactive</h3>
           <p>
-            <span class="en">I bridge the gap between aesthetic design<br /> and technical execution by leveraging<br /> expertise in Photoshop, JavaScript, and GSAP.</span>
-            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br />기술적 구현 사이의 가교 역할을 합니다</span>
+            <span class="en">Beyond static screens, I design interactive<br /> experiences that respond fluidly to every<br /> user action</span>
+            <span class="kr">정적인 화면을 넘어, 사용자의 모든 행동에<br /> 유연하게 반응하는 인터랙티브한 경험을 디자인합니다</span>
           </p>
         </li>
         <li class="strength">
-          <h3>Lorem.</h3>
+          <h3>Balanced</h3>
           <p>
-            <span class="en">I bridge the gap between aesthetic design<br /> and technical execution by leveraging<br /> expertise in Photoshop, JavaScript, and GSAP.</span>
-            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br />기술적 구현 사이의 가교 역할을 합니다</span>
-          </p>
-        </li>
-        <li class="strength">
-          <h3>Lorem.</h3>
-          <p>
-            <span class="en">I bridge the gap between aesthetic design<br /> and technical execution by leveraging<br /> expertise in Photoshop, JavaScript, and GSAP.</span>
-            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br />기술적 구현 사이의 가교 역할을 합니다</span>
-          </p>
-        </li>
-        <li class="strength">
-          <h3>Lorem.</h3>
-          <p>
-            <span class="en">I bridge the gap between aesthetic design<br /> and technical execution by leveraging<br /> expertise in Photoshop, JavaScript, and GSAP.</span>
-            <span class="kr">포토샵, 자바스크립트, GSAP에 대한 전문성을 바탕으로 심미적 디자인과 <br />기술적 구현 사이의 가교 역할을 합니다</span>
+            <span class="en">Creating balanced solutions. I harmonize visual aesthetics with logical, problem-solving UX</span>
+            <span class="kr">균형 잡힌 솔루션을 만듭니다. 시각적인 아름다움과<br /> 논리적이고 문제 해결에 집중하는 UX를 조화시킵니다</span>
           </p>
         </li>
       </ul>
     </section>
-    <section id="project-sec">
+    <section id="project-sec" aria-label="주요 프로젝트">
+      <h2 class="sr-only">주요 프로젝트</h2>
       <div class="project section-1">
         <div class="project-content">
           <div class="project-inner">
-            <video src="assets/video/laundrygo.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <video src="assets/video/laundrygo.mp4" class="project-video" preload="metadata" loop muted playsinline autoplay aria-hidden="true"></video>
             <div class="project-text">
               <h3>LAUNDRYGO</h3>
               <p>기여도 100% #FIGMA</p>
@@ -172,7 +161,7 @@
       <div class="project project-2">
         <div class="project-content">
           <div class="project-inner">
-            <video src="assets/video/havehad_media.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <video src="assets/video/havehad_media.mp4" class="project-video" preload="metadata" loop muted playsinline autoplay aria-hidden="true"></video>
             <div class="project-text">
               <h3>HAVEHAD</h3>
               <p>기여도 100% #적응형 #HTML #CSS #javascript #jQuery</p>
@@ -188,7 +177,7 @@
       <div class="project project-3">
         <div class="project-content">
           <div class="project-inner">
-            <video src="assets/video/mmca.mp4" class="project-video" preload="metadata" loop="loop" muted="muted" playsinline autoplay></video>
+            <video src="assets/video/mmca.mp4" class="project-video" preload="metadata" loop muted playsinline autoplay aria-hidden="true"></video>
             <div class="project-text">
               <h3>MMCA</h3>
               <p>기여도 40% #반응형 #HTML #CSS #javascript #jQuery</p>
@@ -202,17 +191,61 @@
         </div>
       </div>
     </section>
+    <section id="design-sec" aria-label="웹디자인 작업물">
+      <div class="design-wrap">
+        <h2 class="design-heading font-display">Design</h2>
+        <div class="design-marquee" aria-hidden="true">
+          <div class="marquee-row">
+            <div class="marquee-track marquee-track--fwd">
+              <div class="marquee-item"><img src="assets/images/design/design1.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design2.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design3.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design4.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design5.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design6.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design7.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design1.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design2.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design3.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design4.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design5.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design6.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design7.png" alt=""></div>
+            </div>
+          </div>
+          <div class="marquee-row">
+            <div class="marquee-track marquee-track--rev">
+              <div class="marquee-item"><img src="assets/images/design/design5.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design6.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design7.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design1.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design2.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design3.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design4.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design5.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design6.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design7.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design1.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design2.jpg" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design3.png" alt=""></div>
+              <div class="marquee-item"><img src="assets/images/design/design4.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
     <section id="list-sec">
       <h2>Side Project</h2>
       <ul class="lists">
         <li class="list">
-          <a href="#none">
+          <a href="https://opsbakery2.netlify.app/">
             <h3>OPS</h3>
             <p>OPS베이커리를 리뉴얼한 적응형 전체페이지 웹사이트입니다.</p>
           </a>
         </li>
         <li class="list">
-          <a href="#none">
+          <a href="https://jkakaopay.netlify.app/">
             <h3>KAKAOPAY</h3>
             <p>KAKAOPAY 홈페이지를 리뉴얼한 반응형 웹사이트입니다.</p>
           </a>
@@ -223,39 +256,24 @@
             <p>FIGMA로 리뉴얼한 AGODA 어플입니다.</p>
           </a>
         </li>
-        <li class="list">
-          <a href="#none">
-            <h3>Lorem.</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </a>
-        </li>
-        <li class="list">
-          <a href="#none">
-            <h3>Lorem.</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </a>
-        </li>
       </ul>
     </section>
-    <section id="hob-sec">
-      <div class="hob-top">
-        <h3 class="hob-title sec-title">
-          <span>Constraints</span><br />
-          <span>Pixel</span><br />
-          <span><strong class="point">Prototype</strong></span>
-        </h3>
-        <div class="hob-mid">
-          <canvas class="hob-img" aria-label="hob 이미지 애니메이션"></canvas>
-        </div>
+
+    <section id="contact-sec" aria-label="연락처">
+      <img src="assets/images/index/mmca_bg.png" alt="" role="presentation">
+      <div class="contact-content">
+        <h2 class="contact-heading font-display">Get in Touch</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-type">Phone</span>
+            <a href="tel:01040339304" class="contact-link">010-4033-9304</a>
+          </li>
+          <li>
+            <span class="contact-type">Email</span>
+            <a href="mailto:sjr0625@naver.com" class="contact-link">sjr0625@naver.com</a>
+          </li>
+        </ul>
       </div>
-      <div class="hob-bottom">
-        <div class="hob-text">
-          <p class="font-display">And..</p>
-        </div>
-      </div>
-    </section>
-    <section id="contact-sec">
-      <img src="assets/images/index/mmca_bg.png" alt="">
     </section>
   </main>
   

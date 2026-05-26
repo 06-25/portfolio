@@ -152,6 +152,6 @@
 
 @media (max-width: 540px){
   .mobile-nav__list li a{
-  font-size: 5rem;
-}
+    font-size: 5rem;
+  }
 }
