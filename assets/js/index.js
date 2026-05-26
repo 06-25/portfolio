@@ -22,7 +22,11 @@ ScrollTrigger.create({
 });
 
 let resizeTimer;
+let prevWidth = window.innerWidth;
 window.addEventListener('resize', () => {
+  const currentWidth = window.innerWidth;
+  if (currentWidth === prevWidth) return;
+  prevWidth = currentWidth;
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
     ScrollTrigger.refresh();
