@@ -1,24 +1,32 @@
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({ ignoreMobileResize: true });
 
-//header-sec
+const BREAKPOINT_MOBILE = 768;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// -------------------------------------------------------
+// header-sec
+// -------------------------------------------------------
 const showAnim = gsap.from('.header-sec', {
   top: '-8rem',
   paused: true,
-  duration: 0.2
+  duration: reducedMotion ? 0 : 0.2,
 }).progress(1);
 
 ScrollTrigger.create({
-  start: "top top",
-  end: "max",
+  start: 'top top',
+  end: 'max',
   onUpdate: (self) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= BREAKPOINT_MOBILE) {
       showAnim.play();
       return;
     }
     self.direction === -1 ? showAnim.play() : showAnim.reverse();
-  }
+  },
 });
 
 let resizeTimer;
@@ -33,7 +41,9 @@ window.addEventListener('resize', () => {
   }, 200);
 });
 
-//mobile-nav
+// -------------------------------------------------------
+// mobile-nav
+// -------------------------------------------------------
 const burger        = document.querySelector('.burger');
 const mobileNav     = document.querySelector('.mobile-nav');
 const mobileOverlay = document.querySelector('.mobile-nav__overlay');
@@ -48,6 +58,7 @@ const openMobileNav = () => {
   mobileNav.removeAttribute('aria-hidden');
   document.body.style.overflow = 'hidden';
   showAnim.play();
+  mobileClose.focus();
 };
 
 const closeMobileNav = () => {
@@ -57,6 +68,7 @@ const closeMobileNav = () => {
   burger.setAttribute('aria-expanded', 'false');
   mobileNav.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  burger.focus();
 };
 
 burger.addEventListener('click', openMobileNav);
@@ -65,15 +77,17 @@ mobileOverlay.addEventListener('click', closeMobileNav);
 mobileLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeMobileNav();
+  if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
 });
 
-//strength-sec
+// -------------------------------------------------------
+// strength-sec
+// -------------------------------------------------------
 document.querySelectorAll('.strength').forEach((item) => {
   gsap.from(item, {
-    y: 40,
+    y: reducedMotion ? 0 : 40,
     opacity: 0,
-    duration: 0.5,
+    duration: reducedMotion ? 0.3 : 0.5,
     ease: 'power3.out',
     scrollTrigger: {
       trigger: item,
@@ -83,26 +97,30 @@ document.querySelectorAll('.strength').forEach((item) => {
   });
 });
 
-//text-wrap
+// -------------------------------------------------------
+// text-wrap
+// -------------------------------------------------------
 document.querySelectorAll('.text-wrap').forEach((wrap) => {
   const spans = wrap.querySelectorAll('p > span');
   if (!spans.length) return;
 
   gsap.from(spans, {
-    y: 30,
+    y: reducedMotion ? 0 : 30,
     opacity: 0,
-    duration: 0.8,
+    duration: reducedMotion ? 0.3 : 0.8,
     ease: 'power3.out',
-    stagger: 0.12,
+    stagger: reducedMotion ? 0 : 0.12,
     scrollTrigger: {
       trigger: wrap,
-      start: 'top 75%',
-      toggleActions: 'play none none none',
+      start: 'top 45%',
+      toggleActions: 'play none none reverse',
     },
   });
 });
 
-//skills-sec
+// -------------------------------------------------------
+// skills-sec — prefers-reduced-motion 시 수평 이동 스킵
+// -------------------------------------------------------
 const setMoveHorizontalText = (array) => {
   const tl = gsap.timeline();
   tl.addLabel('text', 0);
@@ -119,25 +137,28 @@ const setMoveHorizontalText = (array) => {
   return tl;
 };
 
-//skills-wrap
-document.querySelectorAll('.skills-wrap').forEach((wrap) => {
-  const items = [...wrap.querySelectorAll('p')];
-  if (!items.length) return;
+if (!reducedMotion) {
+  document.querySelectorAll('.skills-wrap').forEach((wrap) => {
+    const items = [...wrap.querySelectorAll('p')];
+    if (!items.length) return;
 
-  const tl = setMoveHorizontalText(items);
+    const tl = setMoveHorizontalText(items);
 
-  ScrollTrigger.create({
-    trigger: wrap,
-    start: 'top bottom',
-    end: 'bottom top',
-    animation: tl,
-    scrub: 1,
-    invalidateOnRefresh: true,
+    ScrollTrigger.create({
+      trigger: wrap,
+      start: 'top bottom',
+      end: 'bottom top',
+      animation: tl,
+      scrub: 1,
+      invalidateOnRefresh: true,
+    });
   });
-});
+}
 
-//project-sec
-if (window.innerWidth > 768) {
+// -------------------------------------------------------
+// project-sec
+// -------------------------------------------------------
+if (window.innerWidth > BREAKPOINT_MOBILE) {
   const panels = gsap.utils.toArray('.project');
   panels.pop();
 
@@ -175,7 +196,10 @@ if (window.innerWidth > 768) {
       });
     }
 
-    tl.fromTo(panel, { scale: 1, opacity: 1 }, { scale: 0.7, opacity: 0.5, duration: 0.9 })
-      .to(panel, { opacity: 0, duration: 0.1 });
+    tl.fromTo(
+      panel,
+      { scale: 1, opacity: 1 },
+      { scale: reducedMotion ? 1 : 0.7, opacity: 0.5, duration: 0.9 }
+    ).to(panel, { opacity: 0, duration: 0.1 });
   });
 }

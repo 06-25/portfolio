@@ -5,7 +5,24 @@
       "WebFetch(domain:kimbangul.github.io)",
       "Bash(mkdir -p ~/.lazyweb)",
       "Bash(echo \"752ff9f1-dafd-4a58-a3bb-baffec6c9a11\")",
-      "Bash(claude plugin *)"
+      "Bash(claude plugin *)",
+      "WebFetch(domain:plan-az.com)",
+      "WebFetch(domain:sketchbook.kr)",
+      "Read(//c/Users/박정우/AppData/Roaming/Code/User/**)",
+      "Bash(code --list-extensions)",
+      "Bash(powershell -command \"code --list-extensions\")",
+      "Bash(powershell -command \"Get-Item 'C:\\\\Users\\\\박정우\\\\.vscode\\\\extensions\\\\solnurkarim.html-to-css-autocompletion-*' | Select-Object Name, LastWriteTime\")",
+      "Bash(powershell -command \"Get-Item 'C:\\\\Users\\\\박정우\\\\.vscode\\\\extensions\\\\*' | Sort-Object LastWriteTime -Descending | Select-Object -First 5 Name, LastWriteTime\")",
+      "Bash(powershell -command \"Get-Content 'C:\\\\Users\\\\박정우\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\settings.json'\")",
+      "Bash(powershell -command \"Test-Path 'C:\\\\Users\\\\박정우\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\profiles'\")",
+      "Bash(powershell -command \"Get-ChildItem 'C:\\\\Users\\\\박정우\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\' | Select-Object Name\")",
+      "Bash(powershell -command \"Get-ChildItem 'C:\\\\Users\\\\박정우\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\globalStorage\\\\' | Select-Object Name\")",
+      "Bash(powershell -command \"& code --reuse-window .\")",
+      "Bash(powershell -command \"Get-Process -Name 'Code' -ErrorAction SilentlyContinue | Select-Object Name, Id, StartTime\")",
+      "Bash(Remove-Item \"assets/js/laundrygo.js\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\박정우\\AppData\\Roaming\\Code\\User"
     ]
   }
 }
