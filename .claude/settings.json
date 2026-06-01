@@ -19,7 +19,8 @@
       "Bash(powershell -command \"Get-ChildItem 'C:\\\\Users\\\\박정우\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\globalStorage\\\\' | Select-Object Name\")",
       "Bash(powershell -command \"& code --reuse-window .\")",
       "Bash(powershell -command \"Get-Process -Name 'Code' -ErrorAction SilentlyContinue | Select-Object Name, Id, StartTime\")",
-      "Bash(Remove-Item \"assets/js/laundrygo.js\")"
+      "Bash(Remove-Item \"assets/js/laundrygo.js\")",
+      "Bash(npx skills *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\박정우\\AppData\\Roaming\\Code\\User"
