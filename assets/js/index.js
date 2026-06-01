@@ -9,6 +9,33 @@ const BREAKPOINT_MOBILE = 768;
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // -------------------------------------------------------
+// main-sec — 텍스트 순환
+// -------------------------------------------------------
+const cycleItems = document.querySelectorAll('.main-cycle-item');
+if (cycleItems.length) {
+  let activeIdx = 0;
+
+  gsap.set(cycleItems, { opacity: 0 });
+  gsap.set(cycleItems[0], { opacity: 1 });
+
+  if (!reducedMotion) {
+    setInterval(() => {
+      const current = cycleItems[activeIdx];
+      const nextIdx = (activeIdx + 1) % cycleItems.length;
+      const next    = cycleItems[nextIdx];
+
+      gsap.killTweensOf([current, next]);
+
+      gsap.timeline()
+        .to(current, { opacity: 0, duration: 0.4, ease: 'power2.in' })
+        .fromTo(next, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'power2.out' });
+
+      activeIdx = nextIdx;
+    }, 5000);
+  }
+}
+
+// -------------------------------------------------------
 // header-sec
 // -------------------------------------------------------
 const showAnim = gsap.from('.header-sec', {
@@ -46,9 +73,9 @@ window.addEventListener('resize', () => {
 // -------------------------------------------------------
 const burger        = document.querySelector('.burger');
 const mobileNav     = document.querySelector('.mobile-nav');
-const mobileOverlay = document.querySelector('.mobile-nav__overlay');
-const mobileClose   = document.querySelector('.mobile-nav__close');
-const mobileLinks   = document.querySelectorAll('.mobile-nav__list a');
+const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+const mobileClose   = document.querySelector('.mobile-nav-close');
+const mobileLinks   = document.querySelectorAll('.mobile-nav-list a');
 
 const openMobileNav = () => {
   mobileNav.classList.add('is-open');

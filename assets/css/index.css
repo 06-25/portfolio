@@ -63,6 +63,22 @@ section{
 #main-sec .intro h2{
   font-size: 12rem;
   font-weight: 600;
+  position: relative;
+  min-height: 1.1em;
+}
+
+.main-cycle-ghost {
+  display: block;
+  visibility: hidden;
+}
+
+.main-cycle-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
 }
 
 /* about-sec*/
@@ -543,6 +559,19 @@ section{
 
 .contact-link:hover{
   color: #ff8b1e;
+}
+
+.contact-copy{
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  font-family: 'Rhymes';
+  color: #333;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px){
