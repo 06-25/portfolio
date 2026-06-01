@@ -564,13 +564,13 @@ section{
 .contact-copy{
   position: absolute;
   bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
+  text-align: center;
   font-size: 1.6rem;
   font-family: 'Rhymes';
   color: #333;
   letter-spacing: 0.1em;
-  white-space: nowrap;
   text-transform: uppercase;
 }
 
@@ -663,6 +663,10 @@ section{
     font-size: 1.6rem;
   }
 
+  .contact-copy{
+    font-size: 1.4rem;
+  }
+
 }
 
 @media (max-width: 540px){
@@ -731,5 +735,11 @@ section{
 
   .contact-link{
     font-size: 1.4rem;
+  }
+
+  .contact-copy{
+    font-size: 1.2rem;
+    bottom: 2rem;
+    letter-spacing: 0.05em;
   }
 }
